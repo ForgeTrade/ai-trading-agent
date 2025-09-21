@@ -4,6 +4,8 @@
 //! including market data events, order commands, execution reports, and more.
 //! All events flow through the message bus using these standardized types.
 
+pub mod domain;
+
 use chrono::{DateTime, Utc};
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
