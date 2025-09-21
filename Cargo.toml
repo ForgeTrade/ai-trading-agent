@@ -7,6 +7,10 @@ description = "High-performance AI Trading Agent with event-driven architecture"
 license = "MIT"
 repository = "https://github.com/ForgeTrade/ai-trading-agent"
 
+[features]
+default = []
+deterministic = []
+
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
@@ -27,3 +31,7 @@ async-trait = "0.1"
 criterion = "0.5"
 proptest = "1"
 tokio-test = "0.4"
+
+[[bench]]
+name = "event_bus_bench"
+harness = false

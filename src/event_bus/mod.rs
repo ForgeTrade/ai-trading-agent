@@ -6,8 +6,14 @@
 
 pub mod stream;
 
+#[cfg(feature = "deterministic")]
+pub mod deterministic;
+
 // Re-export key types from stream module for easier access
 pub use stream::{BusStream as EnhancedBusStream, StreamConfig, StreamError, Receiver, TypedSubscriber};
+
+#[cfg(feature = "deterministic")]
+pub use deterministic::{DeterministicMessageBus, DeterministicClock, DeterministicError};
 
 #[cfg(test)]
 use crate::events::EventPayload;
