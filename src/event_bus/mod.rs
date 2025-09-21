@@ -4,6 +4,11 @@
 //! must provide. It includes error types, subscription management, and async streaming
 //! capabilities for efficient event processing.
 
+pub mod stream;
+
+// Re-export key types from stream module for easier access
+pub use stream::{BusStream as EnhancedBusStream, StreamConfig, StreamError, Receiver, TypedSubscriber};
+
 #[cfg(test)]
 use crate::events::EventPayload;
 use crate::events::{SharedEventPayload, Topic};
